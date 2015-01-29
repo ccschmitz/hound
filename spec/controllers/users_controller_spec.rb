@@ -1,8 +1,8 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe UsersController do
-  describe '#show' do
-    it 'returns current user in json' do
+  describe "#show" do
+    it "returns current user in json" do
       user = create(:user)
       stub_sign_in(user)
 
@@ -13,6 +13,6 @@ describe UsersController do
   end
 
   def user_json(user)
-    user.attributes.slice('id', 'github_username', 'refreshing_repos').to_json
+    user.attributes.slice("id", "github_username", "refreshing_repos", "stripe_customer_id").to_json
   end
 end
