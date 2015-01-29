@@ -17,7 +17,7 @@ describe RepoSubscriber do
         RepoSubscriber.subscribe(repo, user, "cardtoken")
 
         expect(subscription_request).to have_been_requested
-        expect(update_request).to have_been_requested
+        expect(update_request).not_to have_been_requested
         expect(repo.subscription.stripe_subscription_id).
           to eq(stripe_subscription_id)
         expect(repo.subscription_price).to(eq(Plan::PRICES[:private]))

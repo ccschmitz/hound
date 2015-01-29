@@ -11,8 +11,7 @@ class RepoSubscriber
 
   def subscribe
     customer = if user.stripe_customer_id
-      payment_gateway_customer.card = card_token
-      payment_gateway_customer.save
+      payment_gateway_customer
     else
       create_stripe_customer
     end
