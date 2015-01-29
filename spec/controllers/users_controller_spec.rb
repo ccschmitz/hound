@@ -13,6 +13,11 @@ describe UsersController do
   end
 
   def user_json(user)
-    user.attributes.slice("id", "github_username", "refreshing_repos", "stripe_customer_id").to_json
+    user.attributes.slice(
+      "id",
+      "github_username",
+      "refreshing_repos",
+      "stripe_customer_id"
+    ).to_json
   end
 end
